@@ -1,5 +1,7 @@
+//assuming standard ASCII. Change '128's to match chosen character encoding
 function isUnique(string) {
-  let charArray = new Array(128); //array size assumes standard ASCII
+  if (string.length > 128) return false; //quick check for huge strings
+  let charArray = new Array(128);
 
   for (let i = 0; i < string.length; i++ ) {
     if (charArray [string.charCodeAt(i)]) return false;
